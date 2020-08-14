@@ -1,5 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Antic+Slab&family=Comfortaa:wght@500;600&family=Kameron:wght@400;700&family=Pacifico&display=swap");
+
 html {
   font-size: 14px;
+}
+body {
+  font-family: "Antic Slab", serif;
 }
 @media (min-width: 768px) {
   html {
@@ -9,7 +14,16 @@ html {
     font-size: 3.5rem;
   }
 }
-
+.logo {
+  font-size: 1.9em;
+}
+h4,
+h5.modal-title {
+  font-family: "Comfortaa", cursive;
+}
+h5 {
+  font-family: "Pacifico", cursive;
+}
 .container {
   max-width: 960px;
 }
@@ -30,3 +44,6 @@ html {
   user-select: none;
 }
 
+.pricing-card-title {
+  font-family: "Kameron", serif;
+}
