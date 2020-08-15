@@ -5,17 +5,23 @@ html {
 }
 body {
   font-family: "Antic Slab", serif;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
+  min-height: 75rem;
+  padding-top: 4.5rem;
 }
 .logo {
   font-size: 1.9em;
+}
+.bi-basket2-fill {
+  color: #dc3545 !important;
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+.bi-basket2-fill:hover {
+  color: #333 !important;
+  opacity: 0.5;
+  -webkit-transform: rotateZ(-30deg);
+  -ms-transform: rotateZ(-30deg);
+  transform: rotateZ(-30deg);
 }
 h4,
 h5.modal-title {
@@ -34,7 +40,15 @@ h5 {
 
 .card-deck .card {
   min-width: 220px;
+  max-width: 270px;
+  transition: all 0.2s ease;
 }
+.card-deck .card:hover {
+  box-shadow: 1px 1px #53a7ea, 2px 2px #53a7ea, 3px 3px #53a7ea;
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
+}
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -46,4 +60,130 @@ h5 {
 
 .pricing-card-title {
   font-family: "Kameron", serif;
+}
+footer h5 {
+  font-size: 1.8em;
+}
+footer small {
+  font-family: "Comfortaa", cursive;
+  font-family: "Kameron", serif;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: darkgreen !important;
+}
+
+.table td {
+  vertical-align: middle !important;
+}
+
+td .card {
+  max-width: 8rem;
+}
+
+td button span {
+  font-size: 1.3em;
+  font-weight: bolder;
+}
+/* Quantity selectors */
+.quantity {
+  position: relative;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.quantity input {
+  width: 6rem;
+  height: 4rem;
+  line-height: 1.65;
+  float: left;
+  display: block;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+  border: 1px solid #eee;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.quantity-nav {
+  float: left;
+  position: relative;
+  height: 4rem;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  border-left: 1px solid #eee;
+  width: 2rem;
+  text-align: center;
+  color: #333;
+  font-size: 16px;
+  font-weight: bolder;
+  /* font-family: "Trebuchet MS", Helvetica, sans-serif !important; */
+  line-height: 1.7;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.quantity-button.quantity-up {
+  position: absolute;
+  height: 50%;
+  top: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.quantity-button.quantity-down {
+  position: absolute;
+  bottom: -1px;
+  height: 50%;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) and (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  body {
+    padding: 4rem 3rem 2rem;
+  }
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+  .card-deck .card {
+    margin: auto;
+    min-width: 190px;
+    max-width: 220px;
+  }
+  .h1,
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 360px) {
+  body {
+    padding-top: 11.5rem;
+  }
+  .card-deck .card {
+    margin: auto;
+  }
 }

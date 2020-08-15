@@ -24,7 +24,8 @@
 </head>
 
 <body cz-shortcut-listen="true">
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <div
+    class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top">
     <h5 class="my-2 mr-md-auto font-weight-bold text-success">
       <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-shop-window text-success" fill="currentColor"
         xmlns="http://www.w3.org/2000/svg">
@@ -38,9 +39,6 @@
       </svg>
       <span class="logo align-bottom">Dynamic Showcase</span></h5>
     <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-dark" href="#">Features</a>
-      <a class="p-2 text-dark" href="#">Enterprise</a>
-      <a class="p-2 text-dark" href="#">Support</a>
       <a class="p-2 text-dark" href="#" data-toggle="modal" data-target="#staticBackdrop">
         <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-basket2-fill text-danger" fill="currentColor"
           xmlns="http://www.w3.org/2000/svg">
@@ -52,12 +50,12 @@
         </svg>
       </a>
     </nav>
-    <a class="btn btn-outline-primary" href="#">Sign up</a>
+    <a class="btn btn-outline-success" href="#">Sign up</a>
   </div>
   <!-- Modal -->
   <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title text-info" id="staticBackdropLabel">
@@ -68,12 +66,8 @@
               <path fill-rule="evenodd"
                 d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z" />
             </svg>
-            Tu compra
-            <!-- <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash-stack" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path d="M14 3H1a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1h-1z"/>
-              <path fill-rule="evenodd" d="M15 5H1v8h14V5zM1 4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H1z"/>
-              <path d="M13 5a2 2 0 0 0 2 2V5h-2zM3 5a2 2 0 0 1-2 2V5h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 13a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
-            </svg> -->
+            Your shopping
+
             <!-- <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-emoji-laughing" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -83,16 +77,64 @@
                 d="M7 6.5c0 .828-.448 0-1 0s-1 .828-1 0S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 0-1 0s-1 .828-1 0S9.448 5 10 5s1 .672 1 1.5z" />
             </svg> -->
           </h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <button type="button" class="close text-danger font-weight-bolder" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-dash-square-fill" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm2 7.5a.5.5 0 0 0 0 1h8a.5.5 0 0 0 0-1H4z" />
+              </svg>
+            </span>
           </button>
         </div>
         <div class="modal-body">
-          ...
+          <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Item</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!--  -->
+
+              <!-- <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr> -->
+            </tbody>
+          </table>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Understood</button>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cash-stack" fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 3H1a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1h-1z" />
+                  <path fill-rule="evenodd"
+                    d="M15 5H1v8h14V5zM1 4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H1z" />
+                  <path
+                    d="M13 5a2 2 0 0 0 2 2V5h-2zM3 5a2 2 0 0 1-2 2V5h2zm10 8a2 2 0 0 1 2-2v2h-2zM3 13a2 2 0 0 0-2-2v2h2zm7-4a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+                </svg>
+                Subtotal: <span id="total-count">0</span> €
+              </div>
+              <div class="col-md-6 ml-auto">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Empty this cart</button>
+                <button type="button" class="btn btn-primary" id="btn-purchase">Check Out!</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -111,11 +153,14 @@
 
   <footer class="pt-4 m-5 pt-md-5 border-top">
     <div class="row">
-      <div class="col-12 col-md">
-        <img class="mb-2" src="img/bootstrap-solid.svg" alt="" width="24" height="24">
-        <small class="d-block mb-3 text-muted" id="date">© </small>
+      <div class="col-4 col-md text-success text-center">
+        <h5>
+          Antonio Cebrián
+          <small class="d-block mb-3" id="date">© </small>
+        </h5>
+        <!-- <img class="mb-2" src="img/bootstrap-solid.svg" alt="" width="24" height="24"> -->
       </div>
-      <div class="col-6 col-md">
+      <div class="col-4 col-md">
         <h5>Features</h5>
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="#">Cool stuff</a></li>
@@ -126,7 +171,7 @@
           <li><a class="text-muted" href="#">Last time</a></li>
         </ul>
       </div>
-      <div class="col-6 col-md">
+      <div class="col-4 col-md">
         <h5>Resources</h5>
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="#">Resource</a></li>
@@ -135,7 +180,7 @@
           <li><a class="text-muted" href="#">Final resource</a></li>
         </ul>
       </div>
-      <div class="col-6 col-md">
+      <div class="col-4 col-md">
         <h5>About</h5>
         <ul class="list-unstyled text-small">
           <li><a class="text-muted" href="#">Team</a></li>
@@ -160,6 +205,8 @@
     crossorigin="anonymous"></script>
   <!-- core app js -->
   <script src="js/main.js"></script>
+  <script src="js/quantity-selectors.js"></script>
+  <script src="js/shopping-cart.js" async></script>
 </body>
 
 </html>
