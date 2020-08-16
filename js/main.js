@@ -9,8 +9,8 @@ var GenerateContent = {
 
     getProductFormat: () => {
         product = '<!-- Product Card -->';
-        product += '<div class="card mb-4 h-100 shadow-sm" product-id="xxx">';
-        product += '<img src="img/fr-nnn.jpg" class="card-img-top" alt="fruitName">';
+        product += '<div class="draggable card mb-4 h-100 shadow-sm" draggable="true" product-id="xxx">';
+        product += '<img src="img/fr-nnn.jpg" class="card-img-top" alt="fruitName" draggable="false">';
         product += '<div class="card-body">';
         product += '<h1 class="card-title pricing-card-title">yyy € <small class="text-muted">/ Kg</small></h1>';
         product += '<button type="button" class="btn btn-lg btn-block btn-warning">Add to cart</button>';

@@ -23,6 +23,41 @@ body {
   -ms-transform: rotateZ(-30deg);
   transform: rotateZ(-30deg);
 }
+/* Pulse */
+@-webkit-keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+.hvr-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
 h4,
 h5.modal-title {
   font-family: "Comfortaa", cursive;
@@ -84,6 +119,21 @@ td button span {
   font-size: 1.3em;
   font-weight: bolder;
 }
+#cartPurchased,
+#addedToCart,
+#alreadyAddedToCart {
+  font-size: 1.5em;
+}
+#cartPurchased .modal-content {
+  background-color: #d4edda;
+}
+#addedToCart .modal-content {
+  background-color: #d1ecf1;
+}
+#alreadyAddedToCart .modal-content {
+  background-color: #fff3cd;
+}
+
 /* Quantity selectors */
 .quantity {
   position: relative;
@@ -132,7 +182,6 @@ input[type="number"] {
   color: #333;
   font-size: 16px;
   font-weight: bolder;
-  /* font-family: "Trebuchet MS", Helvetica, sans-serif !important; */
   line-height: 1.7;
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);

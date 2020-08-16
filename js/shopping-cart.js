@@ -28,6 +28,7 @@ function ready() {
         button.addEventListener('click', addToCartClicked)
     }
 
+    document.getElementById('empty-cart').addEventListener('click', emptyCart)
     document.getElementById('btn-purchase').addEventListener('click', purchaseClicked)
     // document.getElementsByClassName('btn btn-primary')[0].addEventListener('click', purchaseClicked)
 }
@@ -74,11 +75,23 @@ function addQuantitySelectors() {
 
     });
 }
+document.getElementById("cart").onclick = function() {
+    this.classList.remove('hvr-pulse')    
+}
 
-function purchaseClicked() {
-    alert('Thank you for your purchase')
+
+function emptyCart() {
     let node = document.getElementsByTagName("tbody")[0].innerHTML = ""
     updateCartTotal()
+}
+
+function purchaseClicked() {
+    let node = document.getElementsByTagName("tbody")[0].innerHTML = ""
+    updateCartTotal()
+    $('#cartPurchased').modal('show');
+    setTimeout(function () {
+        $('#cartPurchased').modal('hide');
+    }, 2800);
 }
 
 function removeCartItem(event) {
@@ -101,22 +114,26 @@ function addToCartClicked(event) {
     var shopItem = button.parentNode.parentNode
     var productId = shopItem.getAttribute('product-id')
     var title = shopItem.firstChild.getAttribute('alt')
+    var productName = shopItem.firstChild.nextSibling.nextSibling.textContent
     var price = shopItem.firstChild.nextSibling.firstChild.innerText.replace(' € / Kg', '')
     var imageSrc = shopItem.firstChild.src
-    addItemToCart(productId, title, price, imageSrc)
+    addItemToCart(productId, title, productName, price, imageSrc)
     updateCartTotal()
+
 }
 
-function addItemToCart(productId, title, price, imageSrc) {
+function addItemToCart(productId, title, productName, price, imageSrc) {
     var cartRow = document.createElement('tr')
     var rowId = 'row-number-' + productId
     cartRow.setAttribute('id', rowId)
     var cartItems = document.getElementsByTagName('tbody')[0].getElementsByTagName('tr')
     // return
     for (var i = 0; i < cartItems.length; i++) {
-        // console.log(cartItems)
         if (cartItems[i].getAttribute('id') == rowId) {
-            alert('This item is already added to the cart')
+            $('#alreadyAddedToCart').modal('show');
+            setTimeout(function () {
+                $('#alreadyAddedToCart').modal('hide');
+            }, 2300);
             return
         }
     }
@@ -127,7 +144,7 @@ function addItemToCart(productId, title, price, imageSrc) {
             <div class="card-body text-success">
               <img src="${imageSrc}" alt="${title}" class="img-thumbnail">
             </div>
-            <div class="card-footer bg-transparent border-success">Footer</div>
+            <div class="card-footer bg-transparent border-success">${productName}</div>
           </div>
         </td>
         <td>
@@ -164,6 +181,11 @@ function addItemToCart(productId, title, price, imageSrc) {
         let input = quantityButtons[i]
         input.addEventListener('click', quantityChanged)
     }
+    document.getElementById('cart').classList.add('hvr-pulse')
+    $('#addedToCart').modal('show');
+    setTimeout(function () {
+        $('#addedToCart').modal('hide');
+    }, 1800);
 }
 
 function updateCartTotal() {
@@ -180,3 +202,52 @@ function updateCartTotal() {
     total = Math.round(total * 100) / 100
     document.getElementById('total-count').innerText = total
 }
+
+// Make items draggables
+
+const list_items = document.querySelectorAll('.draggable');
+const cart = document.querySelector('#cart');
+let draggedItem = null;
+
+for (let i = 0; i < list_items.length; i++) {
+    const item = list_items[i];
+
+    item.addEventListener('dragstart', function () {
+        draggedItem = item;
+        setTimeout(function () {
+            item.style.opacity = "0.5"
+        }, 200)
+    });
+
+    item.addEventListener('dragend', function () {
+        setTimeout(function () {
+            draggedItem.style.opacity = "1"
+            draggedItem = null;
+        }, 200);
+    })
+
+}
+
+// Make drop into cart
+
+cart.addEventListener('dragover', function (e) {
+    e.preventDefault();
+});
+
+cart.addEventListener('dragenter', function (e) {
+    e.preventDefault();
+});
+
+// cart.addEventListener('dragleave', function (e) {
+// });
+
+cart.addEventListener('drop', function (e) {
+    this.classList.add("hvr-pulse");
+    var productId = draggedItem.getAttribute('product-id')
+    var title = draggedItem.firstChild.getAttribute('alt')
+    var productName = draggedItem.firstChild.nextSibling.nextSibling.textContent
+    var price = draggedItem.firstChild.nextSibling.firstChild.innerText.replace(' € / Kg', '')
+    var imageSrc = draggedItem.firstChild.src
+    addItemToCart(productId, title, productName, price, imageSrc)
+    updateCartTotal()
+});
