@@ -5,20 +5,14 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
+  <meta name="description" content="shopping-cart website with dra&drop functionality">
   <meta name="author" content="Antonio Cebrián Mesa">
-  <meta name="generator" content="Jekyll v3.8.5">
   <title>Dynamic Showcase</title>
-
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-
-
-  <style>
-
-  </style>
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/7d18e30bff.js" crossorigin="anonymous"></script>
   <!-- Custom styles for this template -->
   <link href="css/pricing.css" rel="stylesheet">
 </head>
@@ -110,8 +104,8 @@
                 </h4>
               </div>
               <div class="col text-right">
-                <button type="button" class="btn btn-danger mb-2" id="empty-cart">Empty this cart</button>
-                <button type="button" class="btn btn-primary mb-2 ml-2 hvr-pulse" id="btn-purchase" data-dismiss="modal"
+                <button type="button" class="disabled btn btn-danger mb-2" id="empty-cart">Empty this cart</button>
+                <button type="button" class="disabled btn btn-primary mb-2 ml-2" id="btn-purchase" data-dismiss="modal"
                   data-toggle="modal">
                   Check Out!
                 </button>
@@ -198,40 +192,44 @@
   </div>
 
   <footer class="pt-4 m-5 pt-md-5 border-top">
-    <div class="row">
-      <div class="col-4 col-md text-success text-center">
+    <div class="row justify-content-md-center text-center">
+      <div class="col-sm text-success mb-3">
         <h5>
           Antonio Cebrián
           <small class="d-block mb-3" id="date">© </small>
         </h5>
       </div>
-      <div class="col-4 col-md">
-        <h5>Features</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Cool stuff</a></li>
-          <li><a class="text-muted" href="#">Random feature</a></li>
-          <li><a class="text-muted" href="#">Team feature</a></li>
-          <li><a class="text-muted" href="#">Stuff for developers</a></li>
-          <li><a class="text-muted" href="#">Another one</a></li>
-          <li><a class="text-muted" href="#">Last time</a></li>
-        </ul>
+      <div class="col-sm-auto mb-3">
+        <h5>My personal Website</h5>
+        <div class="hover-container my-3">
+          <a class="cig" href="http://clasesinformaticagranada.es/">
+            <span>Clases Informática Granada</span>
+          </a>
+        </div>
       </div>
-      <div class="col-4 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Resource</a></li>
-          <li><a class="text-muted" href="#">Resource name</a></li>
-          <li><a class="text-muted" href="#">Another resource</a></li>
-          <li><a class="text-muted" href="#">Final resource</a></li>
-        </ul>
-      </div>
-      <div class="col-4 col-md">
-        <h5>About</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Team</a></li>
-          <li><a class="text-muted" href="#">Locations</a></li>
-          <li><a class="text-muted" href="#">Privacy</a></li>
-          <li><a class="text-muted" href="#">Terms</a></li>
+      <div class="col-sm mb-3">
+        <h5>Follow my work</h5>
+        <ul class="list-group list-group-horizontal-md px-3">
+          <li class="list-group-item flex-fill">
+            <!--Linkedin-->
+            <a class="btn-floating btn-lg btn-li" type="button" role="button"
+              href="https://www.linkedin.com/in/antonio-cebrián-mesa">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li class="list-group-item flex-fill">
+            <!--Github-->
+            <a class="btn-floating btn-lg btn-git" type="button" role="button" href="https://github.com/Ch3ssMaster">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li class="list-group-item flex-fill">
+            <!--Twitter-->
+            <a class="btn-floating btn-lg btn-tw" type="button" role="button"
+              href="https://twitter.com/hacking_the_web">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
