@@ -1,5 +1,7 @@
-
-
+// Dynamic ShowCase v1.0.0-alpha (https://github.com/Ch3ssMaster/dynamic_showcase)
+// Copyright 2020 Antonio Cebrián Mesa
+// Licensed under MIT (https://github.com/Ch3ssMaster/dynamic_showcase/blob/master/LICENSE.md)
+ 
 var GenerateContent = {
 
     getYear: () => {
@@ -19,7 +21,6 @@ var GenerateContent = {
         product += '<h4 class="my-0 font-weight-normal">zzz</h4>';
         product += '</div>';
         product += '</div>';
-        // console.log(this.product);
         return this.product;
     },
 
@@ -59,12 +60,8 @@ var GenerateContent = {
         return el;
     },
     setPageContent: (fruits) => {
-        // fruits = GenerateContent.shuffleProducts(fruits);
-        // console.log(fruits);
         for (const f in fruits) {
             card = GenerateContent.getProductFormat();
-            // console.log(typeof card);
-            //   console.log(fruits[f][1]);
             card = card.replace(/xxx/, fruits[f][0]);
             card = card.replace(/nnn/, fruits[f][0]);
             card = card.replace(/fruitName/, fruits[f][2]);
@@ -73,27 +70,7 @@ var GenerateContent = {
             document.getElementById("products-list").appendChild(GenerateContent.str2DOMElement(card));
         }
     },
-    // shuffleProducts = (arr)=> {
-    //     var rand, temp, i;
-
-    //     for (i = arr.length - 1; i > 0; i -= 1) {
-    //         rand = Math.floor((i + 1) * Math.random());//get random between zero and i (inclusive)
-    //         temp = arr[rand];//swap i and the zero-indexed number
-    //         arr[rand] = arr[i];
-    //         arr[i] = temp;
-    //     }
-    //     return arr;
-    // }
-
 };
-
-// if (document.readyState == 'loading') {
-//     document.addEventListener('DOMContentLoaded', ready)
-// } else {
-// }
 
 GenerateContent.getYear();
 GenerateContent.setPageContent(GenerateContent.fruits);
-var shoppingCart = {
-
-};
